@@ -1,7 +1,7 @@
 <html>
-<link rel="stylesheet" type="text/css" href="main.css">
+<head>
+<link rel="stylesheet" type="text/css" href="styles/main.min.css">
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <head>
     <title>Mason Whitaker Etsy Watches Page</title>
   </head>
   <body>
@@ -3882,9 +3882,11 @@
     }];
 
 
-    items.forEach(function(item) {
-      item.Images.forEach(function(watch){
-        $('#watches').append(watch.url_170x135)
+    items.forEach(function(item){
+      item.results.forEach(function(boop){
+        boop.Images.forEach(function(watch){
+          $('#watches').append('<li class="blah"><img src="' + watch.url_170x135 + '">' + boop.title.substring(0, 25) + '</li>')
+        });
       });
     });
   </script>
